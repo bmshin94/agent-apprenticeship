@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/experience_compilation.schema.json",
+  "title": "Experience Compilation",
+  "type": "object",
+  "required": [
+    "compilation_id",
+    "title",
+    "task_title",
+    "schema_version",
+    "compiler_version",
+    "package_version",
+    "created_at",
+    "components"
+  ],
+  "properties": {
+    "compilation_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "task_title": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string" },
+    "subdomain": { "type": "string" },
+    "workflow_family": { "type": "string" },
+    "schema_version": { "type": "string", "minLength": 1 },
+    "compiler_version": { "type": "string", "minLength": 1 },
+    "package_version": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "training_row_counts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "components": {
+      "type": "object",
+      "required": [
+        "traces",
+        "runtime_training",
+        "training_time_package",
+        "eval_package",
+        "environment_replay",
+        "source_evidence_map"
+      ],
+      "properties": {
+        "traces": { "type": "boolean" },
+        "runtime_training": { "type": "boolean" },
+        "training_time_package": { "type": "boolean" },
+        "eval_package": { "type": "boolean" },
+        "environment_replay": { "type": "boolean" },
+        "source_evidence_map": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

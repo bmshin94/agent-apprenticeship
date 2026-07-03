@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/training_rows.schema.json",
+  "title": "Training Rows",
+  "type": "object",
+  "required": ["row_id", "row_type", "task_id", "source_evidence_refs"],
+  "properties": {
+    "row_id": { "type": "string", "minLength": 1 },
+    "row_type": {
+      "type": "string",
+      "enum": ["sft", "process_supervision", "reward", "verifier", "preference_pair", "critique_revision", "failure_case", "task_variant", "rollout"]
+    },
+    "task_id": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string" },
+    "subdomain": { "type": "string" },
+    "workflow_family": { "type": "string" },
+    "instruction": { "type": "string" },
+    "input_context": { "type": "string" },
+    "target_output": { "type": "string" },
+    "quality_score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "source_evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

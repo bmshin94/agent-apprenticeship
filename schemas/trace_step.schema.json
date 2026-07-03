@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/trace_step.schema.json",
+  "title": "Trace Step",
+  "type": "object",
+  "required": ["step_id", "trace_id", "step_index", "action_type", "created_at"],
+  "properties": {
+    "step_id": { "type": "string", "minLength": 1 },
+    "trace_id": { "type": "string", "minLength": 1 },
+    "step_index": { "type": "integer", "minimum": 0 },
+    "action_type": { "type": "string", "minLength": 1 },
+    "tool_name": { "type": "string" },
+    "input_summary": { "type": "string" },
+    "observation_summary": { "type": "string" },
+    "artifact_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "duration_ms": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": true
+}

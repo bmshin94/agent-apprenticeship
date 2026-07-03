@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/trace.schema.json",
+  "title": "Agent Apprenticeship Trace",
+  "type": "object",
+  "required": ["trace_id", "run_id", "task_id", "task_title", "steps"],
+  "properties": {
+    "trace_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "task_title": { "type": "string", "minLength": 1 },
+    "domain": { "type": "string" },
+    "subdomain": { "type": "string" },
+    "workflow_family": { "type": "string" },
+    "runtime_training_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "installed_skill_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "steps": {
+      "type": "array",
+      "items": { "$ref": "trace_step.schema.json" }
+    },
+    "success": { "type": "boolean" },
+    "termination_reason": { "type": "string" }
+  },
+  "additionalProperties": true
+}

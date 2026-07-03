@@ -1,0 +1,2 @@
+{"evidence_ref":"evidence:trace-step-001","source_type":"trace_step","evidence_kind":"artifact_creation","visibility":"visible","confidence":0.95,"source_id":"step-001","source_path":"trace.jsonl","source_content_hash":"sha256:toy-example-step-001","row_refs":["sft-example-001"]}
+{"evidence_ref":"evidence:trace-step-002","source_type":"trace_step","evidence_kind":"verification","visibility":"visible","confidence":0.95,"source_id":"step-002","source_path":"trace.jsonl","source_content_hash":"sha256:toy-example-step-002","row_refs":["sft-example-001","verifier-example-001"]}

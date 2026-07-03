@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/eval_package.schema.json",
+  "title": "Evaluation Package",
+  "type": "object",
+  "required": ["eval_package_id", "task_id", "rubric_items", "verifier_cases"],
+  "properties": {
+    "eval_package_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "rubric_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rubric_item_id", "criterion", "weight"],
+        "properties": {
+          "rubric_item_id": { "type": "string" },
+          "criterion": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0 }
+        },
+        "additionalProperties": true
+      }
+    },
+    "verifier_cases": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "expected_artifacts": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "source_evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

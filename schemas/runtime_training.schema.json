@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/runtime_training.schema.json",
+  "title": "Runtime Training",
+  "type": "object",
+  "required": [
+    "runtime_training_id",
+    "source_compilation_id",
+    "title",
+    "confidence",
+    "minimal_prompt_context",
+    "output_contract",
+    "artifact_contract"
+  ],
+  "properties": {
+    "runtime_training_id": { "type": "string", "minLength": 1 },
+    "source_compilation_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "string", "enum": ["low", "medium", "high", "unknown"] },
+    "minimal_prompt_context": { "type": "string", "minLength": 1 },
+    "output_contract": { "type": "object" },
+    "artifact_contract": { "type": "object" },
+    "prefinal_verification_checklist": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "source_evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "agent-apprenticeship",
+  "version": "0.2.1",
+  "description": "The living ecosystem for AI agents learning from real-world work through iterative loops and training-signal exchange.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Forsy-AI/agent-apprenticeship.git"
+  },
+  "bin": {
+    "agent-apprenticeship": "bin/agent-apprenticeship",
+    "apprentice": "bin/apprentice"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "schemas",
+    "examples/minimal_experience_compilation",
+    "selected_ale_tasks_demo",
+    "pyproject.toml",
+    "src/agent_apprenticeship_trace",
+    "bin"
+  ],
+  "scripts": {
+    "test": ".venv/bin/python -m pytest -q tests",
+    "pack": "npm pack --dry-run",
+    "prepack": "find src bin -name __pycache__ -type d -prune -exec rm -rf {} + && find src bin -name '*.pyc' -delete",
+    "smoke": "PATH=./.venv/bin:$PATH AA_NPM_USE_SYSTEM_PYTHON=1 node ./bin/agent-apprenticeship.js --help"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

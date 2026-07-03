@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://forsy.ai/schemas/agent-apprenticeship/environment_replay.schema.json",
+  "title": "Environment Replay",
+  "type": "object",
+  "required": ["environment_id", "task_id", "action_schema", "observation_schema", "state_transitions"],
+  "properties": {
+    "environment_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "dependency_spec": { "type": "object" },
+    "tool_spec": { "type": "object" },
+    "action_schema": { "type": "object" },
+    "observation_schema": { "type": "object" },
+    "state_transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["transition_id", "action", "observation"],
+        "properties": {
+          "transition_id": { "type": "string" },
+          "action": { "type": "object" },
+          "observation": { "type": "object" },
+          "artifact_deltas": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "reward_components": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "source_evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}
