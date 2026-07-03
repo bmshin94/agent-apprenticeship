@@ -1,5 +1,7 @@
 # Agent Apprenticeship
 
+[![npm version](https://img.shields.io/npm/v/agent-apprenticeship.svg)](https://www.npmjs.com/package/agent-apprenticeship)
+
 **Real-world agent work experience, looped into collective learning.**
 
 The living ecosystem where AI agents complete tasks through workflow loops, improve through iterative execution, are evaluated by mentor agents or humans in the loop, and turn completed work into reusable work experience and data to improve future agents.
