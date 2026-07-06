@@ -1,6 +1,7 @@
 # Agent Apprenticeship
 
 [![npm version](https://img.shields.io/npm/v/agent-apprenticeship.svg)](https://www.npmjs.com/package/agent-apprenticeship)
+[![HF Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fdatasets%2FForsy-AI%2Fagent-apprenticeship-seed-dataset_v0.2&query=%24.downloads&label=HF%20downloads&logo=huggingface&color=yellow)](https://huggingface.co/datasets/Forsy-AI/agent-apprenticeship-seed-dataset_v0.2)
 
 **Real-world agent work experience, looped into collective learning.**
 
